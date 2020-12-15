@@ -11,6 +11,9 @@ common_packages:
   - dmenu
   - tree
   - firefox
+  - pulseaudio
+  - pulseaudio-alsa
+  - alsa-utils
 
 font_packages:
   - noto-fonts
