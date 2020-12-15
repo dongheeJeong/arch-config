@@ -1,0 +1,8 @@
+---
+# tasks file for arch
+- import_tasks: common-packages.yaml
+- import_tasks: font.yaml
+- import_tasks: dotfiles.yaml
+- import_tasks: build-st.yaml
+- import_tasks: build-dwm.yaml
+

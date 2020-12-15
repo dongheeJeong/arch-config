@@ -1,0 +1,24 @@
+---
+# defaults file for arch
+common_packages:
+  - base
+  - base-devel
+  - xorg-server
+  - xorg-xinit
+  - xorg-xset
+  - git
+  - vim
+  - dmenu
+  - tree
+  - firefox
+
+font_packages:
+  - noto-fonts
+
+dotfiles:
+  - dotfiles/bash_profile
+  - dotfiles/bashrc
+  - dotfiles/vimrc
+  - dotfiles/xinitrc
+  - dotfiles/gitconfig
+

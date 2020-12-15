@@ -1,0 +1,6 @@
+---
+- name: Arch linux configuration
+  hosts: localhost
+  gather_facts: true # needed by arch role
+  roles:
+    - { role: arch }

@@ -1,0 +1,10 @@
+---
+- name: Copy dotfiles
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item | replace('dotfiles/', '.') }}"
+    force: yes
+  loop: "{{ dotfiles }}"
+  tags:
+    - dotfiles
+

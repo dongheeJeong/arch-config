@@ -1,0 +1,9 @@
+---
+- name: Install common packages using pacman (!! This tasks may takes LONG LONG time !!)
+  community.general.pacman:
+    name: "{{ common_packages }}"
+    state: present
+  become: yes
+  tags:
+    - common-packages
+

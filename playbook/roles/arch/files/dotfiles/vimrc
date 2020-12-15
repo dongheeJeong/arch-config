@@ -1,0 +1,30 @@
+" Syuntax highlighting
+filetype plugin on
+syntax on
+
+
+" etc
+set laststatus=2
+set statusline+=%F
+set number
+set relativenumber
+set hlsearch
+
+
+" command alias
+command W w
+command Wq wq
+command Q q
+
+
+" highlight trailing white space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+
+" indent
+filetype indent on
+
+
+colorscheme darkblue
+

@@ -1,0 +1,26 @@
+---
+- name: Set fact(dwm_path)
+  set_fact:
+    dwm_path: "{{ ansible_env.HOME }}/git/dwm"
+
+- name: Git clone dwm repository
+  git: 
+    repo: 'git://git.suckless.org/dwm'
+    dest: "{{ dwm_path }}"
+
+- name: Copy suctom config.h
+  copy:
+    src: dwm/config.h
+    dest: "{{ dwm_path }}/config.h"
+    force: yes
+
+- name: Make dwm
+  community.general.make:
+    chdir: "{{ dwm_path }}"
+
+- name: Make install dwm
+  community.general.make:
+    chdir: "{{ dwm_path }}"
+    target: install
+  become: yes
+

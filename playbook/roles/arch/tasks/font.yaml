@@ -1,0 +1,19 @@
+---
+- name: Install font packages using pacman
+  community.general.pacman:
+    name: "{{ font_packages }}"
+    state: present
+  become: yes
+  tags:
+    - font-packages
+    - font
+
+- name: Copy font.conf
+  copy:
+    src: fonts.conf
+    dest: "{{ ansible_env.HOME }}/.config/fontconfig/fonts.conf"
+    force: yes
+  tags:
+    - font-conf
+    - font
+

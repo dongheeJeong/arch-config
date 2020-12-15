@@ -1,0 +1,9 @@
+#
+# ~/.bash_profile
+#
+
+export PATH="$PATH"
+export EDITOR='vim'
+export TERMINAL='st'
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
