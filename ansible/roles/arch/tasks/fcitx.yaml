@@ -1,0 +1,18 @@
+---
+- name: Install fcitx packages using pacman
+  community.general.pacman:
+    name: "{{ fcitx_packages }}"
+    state: present
+  become: yes
+  tags:
+    - fcitx
+
+- name: Copy fcitx files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    force: yes
+  loop: "{{ fcitx_files }}"
+  tags:
+    - fcitx
+

@@ -22,6 +22,14 @@ font_packages:
   - noto-fonts
   - noto-fonts-cjk
 
+fcitx_packages:
+  - fcitx
+  - fcitx-hangul
+
+fcitx_files:
+  - { src: fcitx/profile, dest: .config/fcitx/profile }
+  - { src: fcitx/fcitx-hangul.config, dest: .config/fcitx/conf/fcitx-hangul.config }
+
 dotfiles:
   - dotfiles/bash_profile
   - dotfiles/bashrc
