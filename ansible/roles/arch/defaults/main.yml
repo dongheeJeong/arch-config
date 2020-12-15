@@ -20,6 +20,7 @@ wallpaper_packages:
 
 font_packages:
   - noto-fonts
+  - noto-fonts-cjk
 
 dotfiles:
   - dotfiles/bash_profile
