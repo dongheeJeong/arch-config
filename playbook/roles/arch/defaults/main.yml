@@ -15,6 +15,9 @@ common_packages:
   - pulseaudio-alsa
   - alsa-utils
 
+wallpaper_packages:
+  - feh
+
 font_packages:
   - noto-fonts
 
