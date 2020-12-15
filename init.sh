@@ -14,6 +14,6 @@ sudo pacman --noconfirm --needed -S ansible
 # to use pacman Ansible module
 ansible-galaxy collection install community.general
 
-cd playbook
+cd ansible
 ansible-playbook main.yaml "$@"
 
