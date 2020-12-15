@@ -9,10 +9,34 @@
   git: 
     repo: 'git://git.suckless.org/dwm'
     dest: "{{ dwm_path }}"
+    version: '6.2' # tag 6.2
+    force: yes
   tags:
     - dwm
 
-- name: Copy suctom config.h
+- name: Set fact (patch_diff_file)
+  set_fact:
+    patch_diff_file: 'dwm-fullgaps-6.2.diff'
+  tags:
+    - dwm
+
+- name: Download fullgaps patch diff
+  get_url:
+    url: "https://dwm.suckless.org/patches/fullgaps/{{ patch_diff_file }}"
+    dest: "{{ dwm_path }}/{{ patch_diff_file }}"
+    force: yes
+  tags:
+    - dwm
+
+- name: Apply fullgaps patch
+  shell: "patch -p1 < {{ patch_diff_file }}"
+  args:
+    chdir: "{{ dwm_path }}"
+  become: yes
+  tags:
+    - dwm
+
+- name: Copy custom config.h
   copy:
     src: dwm/config.h
     dest: "{{ dwm_path }}/config.h"
