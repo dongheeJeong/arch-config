@@ -1,7 +1,7 @@
 ---
 - name: Set fact(st_path)
   set_fact:
-    st_path: "{{ ansible_env.HOME }}/git/st"
+    st_path: "{{ ansible_env.HOME }}/Workspace/git/st"
   tags:
     - st
 

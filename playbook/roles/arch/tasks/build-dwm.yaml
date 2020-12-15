@@ -1,7 +1,7 @@
 ---
 - name: Set fact(dwm_path)
   set_fact:
-    dwm_path: "{{ ansible_env.HOME }}/git/dwm"
+    dwm_path: "{{ ansible_env.HOME }}/Workspace/git/dwm"
   tags:
     - dwm
 
