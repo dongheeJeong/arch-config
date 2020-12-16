@@ -8,11 +8,12 @@
     - font-packages
     - font
 
-- name: Copy font.conf
+- name: Copy font conf files
   copy:
-    src: fonts.conf
-    dest: "{{ ansible_env.HOME }}/.config/fontconfig/fonts.conf"
+    src: "{{ item.src }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
     force: yes
+  loop: "{{ font_conf }}"
   tags:
     - font-conf
     - font
