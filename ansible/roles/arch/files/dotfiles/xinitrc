@@ -8,4 +8,12 @@ fcitx &
 feh --bg-fill --randomize ~/.wallpaper/* &
 
 xset r rate 300 50 &
+
+while true
+do
+  xsetroot -name "$(date '+%Y-%m-%dT%H:%M:%S (%a)  ')"
+  sleep 1s
+done &
+
 exec dwm
+

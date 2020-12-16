@@ -7,6 +7,7 @@ common_packages:
   - xorg-xinit
   - xorg-xset
   - xorg-xrandr
+  - xorg-xsetroot
   - libxft
   - libxinerama
   - git
