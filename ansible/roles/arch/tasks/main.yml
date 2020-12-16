@@ -9,4 +9,5 @@
 - import_tasks: build-st.yaml
 - import_tasks: build-dwm.yaml
 - import_tasks: install-raven-reader.yaml
+- import_tasks: etc.yaml
 

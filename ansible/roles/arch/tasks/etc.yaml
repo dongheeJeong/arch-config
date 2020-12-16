@@ -1,0 +1,10 @@
+---
+- name: Install etc packages using pacman
+  community.general.pacman:
+    name: "{{ etc_packages }}"
+    state: present
+  become: yes
+  tags:
+    - etc-packages
+    - etc
+

@@ -51,3 +51,6 @@ raven_reader:
   required_packages:
     - fuse
 
+etc_packages:
+  - hugo
+
