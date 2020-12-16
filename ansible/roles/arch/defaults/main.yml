@@ -17,6 +17,7 @@ common_packages:
   - pulseaudio
   - pulseaudio-alsa
   - alsa-utils
+  - go
 
 wallpaper_packages:
   - feh
