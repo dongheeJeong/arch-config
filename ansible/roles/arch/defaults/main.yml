@@ -43,3 +43,11 @@ dotfiles:
   - dotfiles/xinitrc
   - dotfiles/gitconfig
 
+raven_reader:
+  # https://github.com/hello-efficiency-inc/raven-reader/releases
+  url: https://github.com/hello-efficiency-inc/raven-reader/releases/download/v0.6.6/Raven-Reader-0.6.6.AppImage
+  dest: /usr/local/bin/raven-reader
+  mode: '0755'
+  required_packages:
+    - fuse
+

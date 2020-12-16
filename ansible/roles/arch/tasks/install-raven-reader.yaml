@@ -1,0 +1,18 @@
+---
+- name: Install packages for raven-reader
+  community.general.pacman:
+    name: "{{ raven_reader.required_packages }}"
+    state: present
+  become: yes
+  tags:
+    - raven-reader
+
+- name: Download raven-reader binary
+  get_url:
+    url: "{{ raven_reader.url }}"
+    dest: "{{ raven_reader.dest }}"
+    mode: "{{ raven_reader.mode }}"
+  become: yes
+  tags:
+    - raven-reader
+
