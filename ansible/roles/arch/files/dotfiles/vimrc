@@ -17,6 +17,9 @@ command Wq wq
 command Q q
 
 
+colorscheme darkblue
+
+
 " highlight trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -25,6 +28,4 @@ match ExtraWhitespace /\s\+$/
 " indent
 filetype indent on
 
-
-colorscheme darkblue
 
