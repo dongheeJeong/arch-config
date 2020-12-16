@@ -1,12 +1,12 @@
 ---
 - name: Set fact(dwm_path)
   set_fact:
-    dwm_path: "{{ ansible_env.HOME }}/Workspace/git/dwm"
+    dwm_path: "{{ playbook_dir }}/suckless/dwm"
   tags:
     - dwm
 
 - name: Git clone dwm repository
-  git: 
+  git:
     repo: 'git://git.suckless.org/dwm'
     dest: "{{ dwm_path }}"
     version: '6.2' # tag 6.2

@@ -1,14 +1,15 @@
 ---
 - name: Set fact(st_path)
   set_fact:
-    dmenu_path: "{{ ansible_env.HOME }}/Workspace/git/dmenu"
+    dmenu_path: "{{ playbook_dir }}/suckless/dmenu"
   tags:
     - dmenu
 
 - name: Git clone dmenu repository (always re-build dmenu)
-  git: 
+  git:
     repo: 'git://git.suckless.org/dmenu'
     dest: "{{ dmenu_path }}"
+    force: yes
   tags:
     - dmenu
 
