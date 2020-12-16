@@ -10,7 +10,7 @@
 
 - name: Ensure font conf directory exists
   file:
-    path: "{{ ansible_env.HOME }}/.config/fcitx/config"
+    path: "{{ ansible_env.HOME }}/.config/fontconfig"
     state: directory
   tags:
     - font-conf
