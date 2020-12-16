@@ -5,6 +5,7 @@
 - import_tasks: fcitx.yaml
 - import_tasks: wallpaper.yaml
 - import_tasks: dotfiles.yaml
+- import_tasks: build-dmenu.yaml
 - import_tasks: build-st.yaml
 - import_tasks: build-dwm.yaml
 

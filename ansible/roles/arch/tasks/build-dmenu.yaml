@@ -1,0 +1,36 @@
+---
+- name: Set fact(st_path)
+  set_fact:
+    dmenu_path: "{{ ansible_env.HOME }}/Workspace/git/dmenu"
+  tags:
+    - dmenu
+
+- name: Git clone dmenu repository (always re-build dmenu)
+  git: 
+    repo: 'git://git.suckless.org/dmenu'
+    dest: "{{ dmenu_path }}"
+  tags:
+    - dmenu
+
+- name: Copy custom config.h
+  copy:
+    src: dmenu/config.h
+    dest: "{{ dmenu_path }}/config.h"
+    force: yes
+  tags:
+    - dmenu
+
+- name: Make dmenu
+  community.general.make:
+    chdir: "{{ dmenu_path }}"
+  tags:
+    - dmenu
+
+- name: Make install dmenu
+  community.general.make:
+    chdir: "{{ dmenu_path }}"
+    target: install
+  become: yes
+  tags:
+    - dmenu
+

@@ -7,9 +7,10 @@ common_packages:
   - xorg-xinit
   - xorg-xset
   - xorg-xrandr
+  - libxft
+  - libxinerama
   - git
   - vim
-  - dmenu
   - tree
   - firefox
   - pulseaudio
