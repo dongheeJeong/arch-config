@@ -9,6 +9,7 @@ set statusline+=%F
 set number
 set relativenumber
 set hlsearch
+set shiftwidth=2
 
 
 " command alias
