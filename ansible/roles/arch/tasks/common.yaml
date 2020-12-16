@@ -6,4 +6,17 @@
   become: yes
   tags:
     - common-packages
+    - common
+
+- name: Copy xorg conf file
+  copy:
+    src: xorg.conf
+    dest: /etc/X11/xorg.conf
+    force: yes
+    owner: root
+    group: root
+  become: yes
+  tags:
+    - common-conf
+    - common
 

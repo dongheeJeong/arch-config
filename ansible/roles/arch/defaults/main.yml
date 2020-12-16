@@ -6,6 +6,7 @@ common_packages:
   - xorg-server
   - xorg-xinit
   - xorg-xset
+  - xorg-xrandr
   - git
   - vim
   - dmenu
