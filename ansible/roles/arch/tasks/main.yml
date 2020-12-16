@@ -1,6 +1,6 @@
 ---
 # tasks file for arch
-- import_tasks: common-packages.yaml
+- import_tasks: common.yaml
 - import_tasks: font.yaml
 - import_tasks: fcitx.yaml
 - import_tasks: wallpaper.yaml
