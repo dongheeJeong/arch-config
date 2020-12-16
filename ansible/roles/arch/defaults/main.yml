@@ -22,11 +22,14 @@ font_packages:
   - noto-fonts
   - noto-fonts-cjk
 
+font_conf:
+  - { src: fonts.conf, dest: .config/fontconfig/fonts.conf }
+
 fcitx_packages:
   - fcitx
   - fcitx-hangul
 
-fcitx_files:
+fcitx_conf:
   - { src: fcitx/profile, dest: .config/fcitx/profile }
   - { src: fcitx/fcitx-hangul.config, dest: .config/fcitx/conf/fcitx-hangul.config }
 
