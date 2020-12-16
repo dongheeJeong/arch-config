@@ -7,6 +7,13 @@
   tags:
     - fcitx
 
+- name: Ensure fcitx conf directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config/fcitx/conf"
+    state: directory
+  tags:
+    - fcitx
+
 - name: Copy fcitx conf files
   copy:
     src: "{{ item.src }}"

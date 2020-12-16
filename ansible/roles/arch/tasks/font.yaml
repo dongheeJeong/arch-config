@@ -8,6 +8,14 @@
     - font-packages
     - font
 
+- name: Ensure font conf directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config/fcitx/config"
+    state: directory
+  tags:
+    - font-conf
+    - font
+
 - name: Copy font conf files
   copy:
     src: "{{ item.src }}"
