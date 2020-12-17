@@ -1,0 +1,10 @@
+---
+- name: Copy my locale.conf
+  copy:
+    src: locale.conf
+    dest: "{{ ansible_env.HOME }}/.config/locale.conf"
+    force: yes
+  tags:
+    - locale
+    - general-conf
+
