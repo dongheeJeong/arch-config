@@ -9,7 +9,30 @@
   git:
     repo: 'git://git.suckless.org/st'
     dest: "{{ st_path }}"
+    version: "0.8.4" # tag 0.8.4
     force: yes
+  tags:
+    - st
+
+- name: Set fact (patch_diff_file)
+  set_fact:
+    patch_diff_file: 'st-scrollback-0.8.4.diff'
+  tags:
+    - st
+
+- name: (patch) Download st-scrollback patch diff
+  get_url:
+    url: "https://st.suckless.org/patches/scrollback/{{ patch_diff_file }}"
+    dest: "{{ st_path }}/{{ patch_diff_file }}"
+    force: yes
+  tags:
+    - st
+
+- name: (patch) Apply st-scrollback patch
+  shell: "patch -p1 < {{ patch_diff_file }}"
+  args:
+    chdir: "{{ st_path }}"
+  become: yes
   tags:
     - st
 
