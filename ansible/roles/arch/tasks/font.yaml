@@ -8,6 +8,14 @@
     - font-packages
     - font
 
+- name: Build font-symbola(for emoji) from AUR
+  import_tasks: "{{ role_path }}/tasks/imports/aur.yaml"
+  vars:
+    package_base: font-symbola
+  tags:
+    - emoji
+    - font
+
 - name: Ensure font conf directory exists
   file:
     path: "{{ ansible_env.HOME }}/.config/fontconfig"
