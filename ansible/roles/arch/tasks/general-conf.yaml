@@ -1,4 +1,27 @@
 ---
+- name: Set hostname
+  shell: "echo '{{ hostname }}' > /etc/hostname"
+  become: yes
+  tags:
+    - hostname
+    - general-conf
+
+- name: Set timezone to Asia/Seoul
+  community.general.timezone:
+    name: Asia/Seoul
+  tags:
+    - timezone
+    - general-conf
+
+- name: Ensure a locale exists
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ locale_gen }}"
+  tags:
+    - locale
+    - general-conf
+
 - name: Copy my locale.conf
   copy:
     src: locale.conf
@@ -6,5 +29,47 @@
     force: yes
   tags:
     - locale
+    - general-conf
+
+- name: Install NetworkManager
+  community.general.pacman:
+    name: networkmanager
+    state: present
+  become: yes
+  tags:
+    - network
+    - general-conf
+
+- name: Enable NetworkManager
+  systemd:
+    name: NetworkManager
+    state: started
+    enabled: yes
+  tags:
+    - network
+    - general-conf
+
+# https://wiki.archlinux.org/index.php/GRUB#Detecting_other_operating_systems
+- name: Install os-prober
+  community.general.pacman:
+    name: "os-prober"
+    state: present
+  become: yes
+  tags:
+    - grub
+    - general-conf
+
+- name: Detect other OS (ex. Windows)
+  shell: "os-prober"
+  become: yes
+  tags:
+    - grub
+    - general-conf
+
+- name: Update grub (add windows in grub)
+  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
+  become: yes
+  tags:
+    - grub
     - general-conf
 

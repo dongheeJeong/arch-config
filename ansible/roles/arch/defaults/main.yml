@@ -1,5 +1,13 @@
 ---
 # defaults file for arch
+hostname: arch
+timezone: Asia/Seoul
+locale_gen:
+  - en_US.UTF-8
+  - en_US
+  - ko_KR.EUC-KR
+  - ko_KR.UTF-8
+
 common_packages:
   - base
   - base-devel
