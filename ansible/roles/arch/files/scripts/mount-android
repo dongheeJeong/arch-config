@@ -1,0 +1,10 @@
+#!/bin/sh
+# https://wiki.archlinux.org/index.php/Media_Transfer_Protocol#FUSE_filesystems
+set -e
+
+mount_at=~/Android
+
+mkdir -p "$mount_at"
+aft-mtp-mount "$mount_at"
+echo "[mounted at: $mount_at]"
+

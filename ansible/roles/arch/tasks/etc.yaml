@@ -8,3 +8,13 @@
     - etc-packages
     - etc
 
+- name: Copy my scipts
+  copy:
+    src: scripts/
+    dest: "{{ ansible_env.HOME }}/.local/scripts/"
+    mode: "0744"
+    force: yes
+  tags:
+    - scripts
+    - etc
+
