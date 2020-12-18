@@ -11,9 +11,14 @@ feh --bg-fill --randomize ~/.wallpaper/* &
 
 xset r rate 300 50 &
 
+amixer set Master 50%
+
 while true
 do
-  xsetroot -name "$(date '+  %Y-%m-%d  %H:%M:%S (%a)  ')"
+  sound_vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
+  date="$(date '+%Y-%m-%d  %H:%M:%S (%a)')"
+
+  xsetroot -name "|  vol: $sound_vol  |  $date  "
   sleep 1s
 done &
 

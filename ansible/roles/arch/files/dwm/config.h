@@ -62,6 +62,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("volume-down") },
+	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("volume-up") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("$RSS") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -89,7 +91,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	//{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
