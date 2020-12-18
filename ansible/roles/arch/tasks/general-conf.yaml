@@ -9,6 +9,7 @@
 - name: Set timezone to Asia/Seoul
   community.general.timezone:
     name: Asia/Seoul
+  become: yes
   tags:
     - timezone
     - general-conf
@@ -18,6 +19,15 @@
     name: "{{ item }}"
     state: present
   loop: "{{ locale_gen }}"
+  become: yes
+  tags:
+    - locale
+    - general-conf
+
+- name: Ensure .config directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
   tags:
     - locale
     - general-conf
