@@ -54,6 +54,7 @@ raven_reader:
 
 etc_packages:
   - hugo
+  - android-file-transfer
   - notification-daemon
   - libnofity
 
