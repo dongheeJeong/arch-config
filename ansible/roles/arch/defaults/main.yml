@@ -18,6 +18,9 @@ common_packages:
   - pulseaudio-alsa
   - alsa-utils
   - go
+  - strace
+  - man-db
+  - man-pages
 
 wallpaper_packages:
   - feh
