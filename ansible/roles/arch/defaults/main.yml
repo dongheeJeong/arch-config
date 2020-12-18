@@ -56,5 +56,5 @@ etc_packages:
   - hugo
   - android-file-transfer
   - notification-daemon
-  - libnofity
+  - libnotify
 
