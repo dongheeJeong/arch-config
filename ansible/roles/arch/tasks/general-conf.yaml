@@ -60,10 +60,14 @@
     - general-conf
 
 # https://wiki.archlinux.org/index.php/GRUB#Detecting_other_operating_systems
-- name: Install os-prober
+# https://wiki.archlinux.org/index.php/GRUB#MS_Windows
+- name: Install os-prober, ntfs-3g
   community.general.pacman:
-    name: "os-prober"
+    name: "{{ item }}"
     state: present
+  loop:
+    - os-prober
+    - ntfs-3g
   become: yes
   tags:
     - grub
