@@ -18,9 +18,6 @@ command Wq wq
 command Q q
 
 
-colorscheme darkblue
-
-
 " highlight trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -30,3 +27,8 @@ match ExtraWhitespace /\s\+$/
 filetype indent on
 
 
+" color
+" https://draculatheme.com/vim
+packadd! dracula
+syntax enable
+colorscheme dracula

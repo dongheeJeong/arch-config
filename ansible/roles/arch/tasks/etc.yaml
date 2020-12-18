@@ -18,3 +18,27 @@
     - scripts
     - etc
 
+- name: set fact (vim-color-theme)
+  set_fact:
+    vim_color_theme: "{{ ansible_env.HOME }}/.vim/pack/themes/start"
+  tags:
+    - vim
+    - etc
+
+- name: Ensure vim color theme directory exists
+  file:
+    path: "{{ vim_color_theme }}"
+    state: directory
+  tags:
+    - vim
+    - etc
+
+- name: Download color theme
+  git:
+    repo: https://github.com/dracula/vim.git
+    dest: "{{ vim_color_theme }}/dracula"
+    force: yes
+  tags:
+    - vim
+    - etc
+
