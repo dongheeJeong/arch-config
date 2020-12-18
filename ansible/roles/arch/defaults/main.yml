@@ -54,4 +54,6 @@ raven_reader:
 
 etc_packages:
   - hugo
+  - notification-daemon
+  - libnofity
 
