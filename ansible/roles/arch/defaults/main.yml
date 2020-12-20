@@ -68,4 +68,5 @@ etc_packages:
   - android-file-transfer
   - notification-daemon
   - libnotify
+  - sxiv
 
