@@ -71,4 +71,5 @@ etc_packages:
   - sxiv
   - deepin-screenshot
   - imagemagick
+  - filezilla
 

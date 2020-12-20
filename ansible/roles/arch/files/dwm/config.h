@@ -62,6 +62,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("filezilla") },
 	{ MODKEY|ShiftMask,             XK_4,      spawn,          SHCMD("deepin-screenshot") },
 	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("volume-down") },
 	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("volume-up") },
