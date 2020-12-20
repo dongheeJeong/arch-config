@@ -70,4 +70,5 @@ etc_packages:
   - libnotify
   - sxiv
   - deepin-screenshot
+  - imagemagick
 

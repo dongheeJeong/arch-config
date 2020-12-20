@@ -1,0 +1,16 @@
+#!/bin/sh
+
+argc="$#"
+
+if [ $argc -ne "2" ]; then
+  echo "Usage: resize [INPUT_IMAGE] [WIDTH_BE_CONVERTED]"
+  exit 1
+fi
+
+INPUT="$1"
+WIDTH="$2"
+
+OUTPUT="$INPUT.converted.width.$WIDTH"
+
+convert -resize "$WIDTH" "$INPUT" "$OUTPUT"
+
