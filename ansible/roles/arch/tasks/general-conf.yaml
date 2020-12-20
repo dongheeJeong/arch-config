@@ -41,24 +41,6 @@
     - locale
     - general-conf
 
-- name: Install NetworkManager
-  community.general.pacman:
-    name: networkmanager
-    state: present
-  become: yes
-  tags:
-    - network
-    - general-conf
-
-- name: Enable NetworkManager
-  systemd:
-    name: NetworkManager
-    state: started
-    enabled: yes
-  tags:
-    - network
-    - general-conf
-
 # https://wiki.archlinux.org/index.php/GRUB#Detecting_other_operating_systems
 # https://wiki.archlinux.org/index.php/GRUB#MS_Windows
 - name: Install os-prober, ntfs-3g
