@@ -33,6 +33,7 @@ common_packages:
   - pulseaudio-bluetooth
   - bluez
   - bluez-utils
+  - jq
 
 wallpaper_packages:
   - feh
