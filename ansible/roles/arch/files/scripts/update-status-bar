@@ -1,7 +1,10 @@
 #!/bin/sh
 
+root_partition="$(df -h / | tail -n 1 | awk '{ printf("%s  %s / %s (%s)", $1, $3, $2, $5) }')"
+home_partition="$(df -h /home | tail -n 1 | awk '{ printf("%s  %s / %s (%s)", $1, $3, $2, $5) }')"
+
 sound_vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
 date="$(date '+%Y-%m-%d  %H:%M:%S (%a)')"
 
-xsetroot -name "|  vol: $sound_vol  |  $date  "
+xsetroot -name "|  $root_partition  |  $home_partition  |  vol: $sound_vol  |  $date  "
 
