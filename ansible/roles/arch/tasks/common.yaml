@@ -8,6 +8,15 @@
     - common-packages
     - common
 
+- name: Enable / start bluetooth daemon
+  systemd:
+    state: started
+    name: bluetooth
+    enabled: yes
+  become: yes
+  tags:
+    - common
+
 - name: Copy xorg conf file
   copy:
     src: xorg.conf

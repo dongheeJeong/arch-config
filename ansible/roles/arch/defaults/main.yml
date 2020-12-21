@@ -29,6 +29,10 @@ common_packages:
   - strace
   - man-db
   - man-pages
+  - pulseaudio-alsa
+  - pulseaudio-bluetooth
+  - bluez
+  - bluez-utils
 
 wallpaper_packages:
   - feh
