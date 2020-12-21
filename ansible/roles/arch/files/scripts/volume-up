@@ -2,3 +2,5 @@
 
 amixer sset Master 5%+
 
+update-status-bar
+
