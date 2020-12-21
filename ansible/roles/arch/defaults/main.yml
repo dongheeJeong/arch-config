@@ -34,6 +34,7 @@ common_packages:
   - bluez
   - bluez-utils
   - jq
+  - openssh
 
 wallpaper_packages:
   - feh
