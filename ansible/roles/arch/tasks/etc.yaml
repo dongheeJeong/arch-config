@@ -42,3 +42,13 @@
     - vim
     - etc
 
+# Install Nerd Tree
+- name: Install NerdTree
+  git:
+    repo: https://github.com/preservim/nerdtree.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/nerdtree"
+    force: yes
+  tags:
+    - vim
+    - etc
+

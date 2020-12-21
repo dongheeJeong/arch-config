@@ -32,3 +32,12 @@ filetype indent on
 packadd! dracula
 syntax enable
 colorscheme dracula
+
+
+" NerdTree (close vim if the only window left open is a NERDTree)
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" Shortcut
+map<C-p> :NERDTreeToggle<CR>
+
