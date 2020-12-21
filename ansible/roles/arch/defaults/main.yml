@@ -79,4 +79,5 @@ etc_packages:
   - imagemagick
   - filezilla
   - mplayer
+  - nnn
 
