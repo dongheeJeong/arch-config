@@ -1,0 +1,7 @@
+#!/bin/sh
+
+sound_vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
+date="$(date '+%Y-%m-%d  %H:%M:%S (%a)')"
+
+xsetroot -name "|  vol: $sound_vol  |  $date  "
+
