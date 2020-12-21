@@ -42,11 +42,28 @@
     - vim
     - etc
 
-# Install Nerd Tree
 - name: Install NerdTree
   git:
     repo: https://github.com/preservim/nerdtree.git
     dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/nerdtree"
+    force: yes
+  tags:
+    - vim
+    - etc
+
+- name: Install vim-airline(statusline)
+  git:
+    repo: https://github.com/vim-airline/vim-airline.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/airline"
+    force: yes
+  tags:
+    - vim
+    - etc
+
+- name: Install fugitive(vim-airline에 Git 관련 정보 추가를 위해)
+  git:
+    repo: https://github.com/tpope/vim-fugitive.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/vim-fugitive"
     force: yes
   tags:
     - vim
