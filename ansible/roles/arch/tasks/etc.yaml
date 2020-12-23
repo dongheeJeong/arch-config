@@ -78,3 +78,19 @@
   tags:
     - etc
 
+- name: Ensure mplayer config directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.mplayer"
+    state: directory
+  tags:
+    - mplayer
+    - etc
+
+- name: Copy mplayer config file
+  copy:
+    src: mplayer.conf
+    dest: "{{ ansible_env.HOME }}/.mplayer/config"
+  tags:
+    - mplayer
+    - etc
+
