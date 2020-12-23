@@ -69,3 +69,12 @@
     - vim
     - etc
 
+- name: Add backlight for changing brightness without sudo
+  copy:
+    src: backlight.rules
+    dest: /etc/udev/rules.d/backlight.rules
+    force: yes
+  become: yes
+  tags:
+    - etc
+

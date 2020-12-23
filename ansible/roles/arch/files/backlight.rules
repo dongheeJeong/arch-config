@@ -1,0 +1,7 @@
+# 
+# https://gist.github.com/joinemm/8fc492d3843ca302d7e272b24eea10b3
+#
+
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp wheel /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+
