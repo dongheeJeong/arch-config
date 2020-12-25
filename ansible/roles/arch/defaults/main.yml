@@ -11,6 +11,8 @@ locale_gen:
 common_packages:
   - base
   - base-devel
+  - linux-firmware
+  - linux-headers
   - xorg-server
   - xorg-xinit
   - xorg-xset
