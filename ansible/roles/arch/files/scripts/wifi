@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+select="$(nmcli --get-values SSID,SIGNAL device wifi list | dmenu)"
+SSID="$(echo "$select" | cut -d':' -f1)"
+
+PASSWORD="$(echo "password?(just enter if not need)" | dmenu)"
+
+notify-send "$(nmcli device wifi connect "$SSID" password "$PASSWORD" 2>&1)"
+
