@@ -1,15 +1,21 @@
 #!/bin/sh
 
-wifi="$(nmcli --get-values GENERAL.CONNECTION device show)"
-if [ -z $wifi ]; then
+wifi="$(nmcli -g TYPE,CONNECTION device status | grep "wifi:" | cut -d: -f2)"
+if [ -z "$wifi" ]; then
   wifi="X"
 fi
 
-root_partition="$(df -h / | tail -n 1 | awk '{ printf("%s  %s / %s (%s)", $1, $3, $2, $5) }')"
-home_partition="$(df -h /home | tail -n 1 | awk '{ printf("%s  %s / %s (%s)", $1, $3, $2, $5) }')"
+partitions="$(df -h | grep -e "^/dev/" | awk '{ printf("%s  %s / %s (%s)\n", $1, $3, $2, $5) }')"
 
 sound_vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
 date="$(date '+%Y-%m-%d  %H:%M:%S (%a)')"
 
-xsetroot -name "|  $root_partition  |  $home_partition  |  wifi: $wifi  |  vol: $sound_vol  |  $date  "
+
+partition_status=""
+IFS=$'\n'
+for partition in $partitions; do
+  partition_status+="|  $partition  "
+done
+
+xsetroot -name "$partition_status|  wifi: $wifi  |  vol: $sound_vol  |  $date  "
 
