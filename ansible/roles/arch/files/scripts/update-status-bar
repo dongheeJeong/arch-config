@@ -21,12 +21,12 @@ done
 # battery
 #
 battery=""
-battery_path="/sys/class/power_supply/BAT0"
-if [ -d  "$battery_path" ]; then
-  capacity="$(cat $battery_path/capacity)"
+battery_dir="/sys/class/power_supply/BAT0"
+if [ -d  "$battery_dir" ]; then
+  capacity="$(cat $battery_dir/capacity)"
   battery+="$capacity%"
 
-  if [ "$(cat $battery_path/status)" == "Charging" ]; then
+  if [ "$(cat $battery_dir/status)" == "Charging" ]; then
     battery+=" (🔌)"
   fi
 else
