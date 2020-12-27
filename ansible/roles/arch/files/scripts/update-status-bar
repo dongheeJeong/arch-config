@@ -5,7 +5,7 @@ if [ -z "$network" ]; then
   network="X"
 fi
 
-partitions="$(df -h | grep -e "^/dev/" | awk '{ printf("%s  %s / %s (%s)\n", $1, $3, $2, $5) }')"
+partitions="$(df -h | grep -e "^/dev/" | grep --invert-match "/boot" | awk '{ printf("%s  %s / %s (%s)\n", $1, $3, $2, $5) }')"
 
 sound_vol="$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))"
 date="$(date '+%Y-%m-%d  %H:%M:%S (%a)')"
