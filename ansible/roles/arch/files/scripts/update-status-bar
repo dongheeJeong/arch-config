@@ -17,5 +17,19 @@ for partition in $partitions; do
   partition_status+="|  $partition  "
 done
 
-xsetroot -name "$partition_status|  wifi: $wifi  |  vol: $sound_vol  |  $date  "
+#
+# battery
+#
+battery="🔋 "
+capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+if [ -z "$battery" ]; then
+  battery+="X"
+else
+  battery+="$capacity%"
+  if [ "$(cat /sys/class/power_supply/BAT0/status)" == "Charging" ]; then
+    battery+=" (🔌)"
+  fi
+fi
+
+xsetroot -name "$partition_status|  wifi: $wifi  |  vol: $sound_vol  |  $battery  |  $date  "
 
