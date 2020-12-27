@@ -21,14 +21,16 @@ done
 # battery
 #
 battery="🔋 "
-capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
-if [ -z "$battery" ]; then
-  battery+="X"
-else
+battery_path="/sys/class/power_supply/BAT0"
+if [ -d  "$battery_path" ]; then
+  capacity="$(cat $battery_path/capacity)"
   battery+="$capacity%"
-  if [ "$(cat /sys/class/power_supply/BAT0/status)" == "Charging" ]; then
+
+  if [ "$(cat $battery_path/status)" == "Charging" ]; then
     battery+=" (🔌)"
   fi
+else
+  battery+="X"
 fi
 
 xsetroot -name "$partition_status|  wifi: $wifi  |  vol: $sound_vol  |  $battery  |  $date  "
