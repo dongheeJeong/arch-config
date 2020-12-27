@@ -1,8 +1,8 @@
 #!/bin/sh
 
-wifi="$(nmcli -g TYPE,CONNECTION device status | grep "wifi:" | cut -d: -f2)"
-if [ -z "$wifi" ]; then
-  wifi="X"
+network="$(nmcli -g STATE,CONNECTION device status | grep "connected:" | cut -d: -f2)"
+if [ -z "$network" ]; then
+  network="X"
 fi
 
 partitions="$(df -h | grep -e "^/dev/" | awk '{ printf("%s  %s / %s (%s)\n", $1, $3, $2, $5) }')"
@@ -33,5 +33,5 @@ else
   battery+="X"
 fi
 
-xsetroot -name "$partition_status|  📶 $wifi  |  🔊 $sound_vol  |  🔋 $battery  |  $date  "
+xsetroot -name "$partition_status|  📶 $network  |  🔊 $sound_vol  |  🔋 $battery  |  $date  "
 
