@@ -20,7 +20,7 @@ done
 #
 # battery
 #
-battery="🔋 "
+battery=""
 battery_path="/sys/class/power_supply/BAT0"
 if [ -d  "$battery_path" ]; then
   capacity="$(cat $battery_path/capacity)"
@@ -33,5 +33,5 @@ else
   battery+="X"
 fi
 
-xsetroot -name "$partition_status|  wifi: $wifi  |  vol: $sound_vol  |  $battery  |  $date  "
+xsetroot -name "$partition_status|  📶 $wifi  |  🔊 $sound_vol  |  🔋 $battery  |  $date  "
 
