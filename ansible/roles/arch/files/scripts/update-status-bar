@@ -25,9 +25,12 @@ battery_dir="/sys/class/power_supply/BAT0"
 if [ -d  "$battery_dir" ]; then
   capacity="$(cat $battery_dir/capacity)"
   battery+="$capacity%"
+  echo "$battery"
 
   if [ "$(cat $battery_dir/status)" == "Charging" ]; then
     battery+=" (🔌)"
+  elif [ "$(cat $battery_dir/status)" == "Full" ]; then
+    battery+=" (Full)"
   fi
 else
   battery+="X"
