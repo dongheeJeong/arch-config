@@ -11,4 +11,4 @@
 - import_tasks: build-dwm.yaml
 - import_tasks: install-raven-reader.yaml
 - import_tasks: etc.yaml
-
+- import_tasks: mpd.yaml
