@@ -8,6 +8,15 @@
     - common-packages
     - common
 
+- name: Install common AUR packages
+  include_tasks: "{{ role_path }}/tasks/imports/aur.yaml"
+  vars:
+    package_base: "{{ item }}"
+  loop: "{{ common_aur_packages }}"
+  tags:
+    - aur
+    - common
+
 - name: Enable / start bluetooth daemon
   systemd:
     state: started

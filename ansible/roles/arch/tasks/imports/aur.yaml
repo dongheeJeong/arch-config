@@ -3,10 +3,14 @@
     repo: "https://aur.archlinux.org/{{ package_base }}.git"
     dest: "/tmp/{{ package_base }}"
     force: yes
+  tags:
+    - aur
 
 - name: Build ( makepkg )
   # https://www.archlinux.org/pacman/makepkg.8.html#_options
   shell: "yes | makepkg --syncdeps --install --force"
   args:
     chdir: "/tmp/{{ package_base }}"
+  tags:
+    - aur
 

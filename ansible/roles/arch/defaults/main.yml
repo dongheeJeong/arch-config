@@ -38,6 +38,9 @@ common_packages:
   - jq
   - openssh
 
+common_aur_packages:
+  - brave-bin
+
 wallpaper_packages:
   - feh
 
