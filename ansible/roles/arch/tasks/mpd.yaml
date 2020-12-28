@@ -6,15 +6,6 @@
   tags:
     - mpd
 
-- name: Enable / start MPD
-  systemd:
-    state: started
-    name: mpd
-    enabled: yes
-    scope: user
-  tags:
-    - mpd
-
 - name: Ensure mpd config directory exists
   file:
     path: "{{ ansible_env.HOME }}/.config/mpd"
@@ -33,4 +24,13 @@
   tags:
     - mpd
     - mpd-config
+
+- name: Enable / start MPD
+  systemd:
+    state: started
+    name: mpd
+    enabled: yes
+    scope: user
+  tags:
+    - mpd
 
