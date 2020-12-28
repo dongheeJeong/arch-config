@@ -62,6 +62,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("st -e ncmpcpp") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("st -e nnn") },
 	{ MODKEY|ShiftMask,             XK_9,      spawn,          SHCMD("brightness-down") },
 	{ MODKEY|ShiftMask,             XK_0,      spawn,          SHCMD("brightness-up") },

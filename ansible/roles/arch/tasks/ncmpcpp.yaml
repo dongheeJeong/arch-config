@@ -1,0 +1,26 @@
+- name: Install ncmpcpp
+  community.general.pacman:
+    name: ncmpcpp
+    state: present
+  become: yes
+  tags:
+    - ncmpcpp
+
+- name: Ensure ncmpcpp config directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.ncmpcpp"
+    state: directory
+  tags:
+    - ncmpcpp
+    - ncmpcpp-config
+
+- name: Copy ncmpcpp config file
+  copy:
+    src: ncmpcpp.conf
+    dest: "{{ ansible_env.HOME }}/.ncmpcpp/config"
+    force: yes
+  tags:
+    - ncmpcpp
+    - ncmpcpp-config
+
+
