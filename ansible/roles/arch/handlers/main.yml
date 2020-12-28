@@ -4,5 +4,5 @@
   systemd:
     state: restarted
     name: mpd
-  become: yes
+    scope: user
 
