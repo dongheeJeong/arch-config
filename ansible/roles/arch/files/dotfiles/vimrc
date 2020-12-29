@@ -41,3 +41,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Shortcut
 map<C-p> :NERDTreeToggle<CR>
 
+autocmd FileType sh map<C-c> :!sh %<CR>
+autocmd FileType python map<C-c> :!python %<CR>
+
