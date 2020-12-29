@@ -37,9 +37,14 @@ colorscheme dracula
 " NerdTree (close vim if the only window left open is a NERDTree)
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Goyo.vim integration
+" https://github.com/junegunn/limelight.vim
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Shortcut
 map<C-p> :NERDTreeToggle<CR>
+map<C-g> :Goyo<CR>
 
 autocmd FileType sh map<C-c> :!sh %<CR>
 autocmd FileType python map<C-c> :!python %<CR>

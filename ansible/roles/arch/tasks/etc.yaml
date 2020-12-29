@@ -69,6 +69,24 @@
     - vim
     - etc
 
+- name: Install goyo
+  git:
+    repo: https://github.com/junegunn/goyo.vim.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/goyo.vim"
+    force: yes
+  tags:
+    - vim
+    - etc
+
+- name: Install limelight
+  git:
+    repo: https://github.com/junegunn/limelight.vim.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/limelight.vim"
+    force: yes
+  tags:
+    - vim
+    - etc
+
 - name: Add backlight for changing brightness without sudo
   copy:
     src: backlight.rules
