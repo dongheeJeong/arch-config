@@ -87,4 +87,5 @@ etc_packages:
   - mplayer
   - nnn
   - youtube-dl
+  - ctags
 
