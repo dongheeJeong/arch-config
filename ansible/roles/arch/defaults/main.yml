@@ -67,6 +67,7 @@ dotfiles:
   - dotfiles/vimrc
   - dotfiles/xinitrc
   - dotfiles/gitconfig
+  - dotfiles/tmux.conf
 
 raven_reader:
   # https://github.com/hello-efficiency-inc/raven-reader/releases
@@ -91,6 +92,7 @@ etc_packages:
   - ctags
   - cscope
   - terraform
+  - tmux
 
 pip_packages:
   - awscli
