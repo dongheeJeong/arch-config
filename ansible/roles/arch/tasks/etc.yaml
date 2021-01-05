@@ -87,6 +87,21 @@
     - vim
     - etc
 
+- name: Download cscope_maps.vim
+  block:
+    - name: Ensure vim plugin directory exists
+      file:
+        path: "{{ ansible_env.HOME }}/.vim/plugin"
+        state: directory
+    - name: get_url cscope_maps.vim
+      get_url:
+        url: http://cscope.sourceforge.net/cscope_maps.vim
+        dest: "{{ ansible_env.HOME }}/.vim/plugin/cscope_maps.vim"
+        force: yes
+  tags:
+    - vim
+    - etc
+
 - name: Add backlight for changing brightness without sudo
   copy:
     src: backlight.rules

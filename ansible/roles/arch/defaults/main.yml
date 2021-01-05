@@ -88,4 +88,5 @@ etc_packages:
   - nnn
   - youtube-dl
   - ctags
+  - cscope
 
