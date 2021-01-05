@@ -102,6 +102,15 @@
     - vim
     - etc
 
+- name: Install terraform plugin
+  git:
+    repo: https://github.com/hashivim/vim-terraform.git
+    dest: "{{ ansible_env.HOME }}/.vim/pack/vender/start/vim-terraform"
+    force: yes
+  tags:
+    - vim
+    - etc
+
 - name: Add backlight for changing brightness without sudo
   copy:
     src: backlight.rules

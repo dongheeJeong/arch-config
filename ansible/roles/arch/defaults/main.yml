@@ -90,6 +90,7 @@ etc_packages:
   - youtube-dl
   - ctags
   - cscope
+  - terraform
 
 pip_packages:
   - awscli
