@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-export PATH="$PATH:$HOME/.local/scripts"
+export PATH="$PATH:$HOME/.local/scripts:$HOME/.local/bin"
 export EDITOR='vim'
 export TERMINAL='st'
 export BROWSER='brave'

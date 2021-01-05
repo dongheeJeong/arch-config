@@ -38,6 +38,7 @@ common_packages:
   - jq
   - openssh
   - htop
+  - python-pip
 
 common_aur_packages:
   - brave-bin
@@ -89,4 +90,7 @@ etc_packages:
   - youtube-dl
   - ctags
   - cscope
+
+pip_packages:
+  - awscli
 

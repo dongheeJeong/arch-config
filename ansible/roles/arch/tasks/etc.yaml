@@ -127,3 +127,12 @@
     - mplayer
     - etc
 
+- name: Install pip packages in user space (~/.local/bin/)
+  pip:
+    name: "{{ pip_packages }}"
+    extra_args: --user
+    state: present
+  tags:
+    - pip
+    - etc
+
