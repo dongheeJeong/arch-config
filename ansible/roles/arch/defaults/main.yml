@@ -39,6 +39,7 @@ common_packages:
   - openssh
   - htop
   - python-pip
+  - gun-netcat
 
 common_aur_packages:
   - brave-bin
@@ -96,4 +97,6 @@ etc_packages:
 
 pip_packages:
   - awscli
+  - boto3
+  - botocore
 
