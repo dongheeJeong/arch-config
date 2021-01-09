@@ -145,3 +145,12 @@
     - pip
     - etc
 
+- name: Install mutt-wizard from AUR
+  include_tasks: "{{ role_path }}/tasks/imports/aur.yaml"
+  vars:
+    package_base: "mutt-wizard-git"
+  tags:
+    - mutt-wizard
+    - etc
+
+
