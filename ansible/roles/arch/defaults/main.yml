@@ -94,6 +94,7 @@ etc_packages:
   - cscope
   - terraform
   - tmux
+  - lynx # mutt
 
 pip_packages:
   - awscli
