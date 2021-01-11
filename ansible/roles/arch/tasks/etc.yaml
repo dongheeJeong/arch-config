@@ -161,4 +161,41 @@
     - urlview
     - etc
 
+- name: Install pam-gnupg from AUR
+  include_tasks: "{{ role_path }}/tasks/imports/aur.yaml"
+  vars:
+    package_base: "pam-gnupg"
+  tags:
+    - pam-gnupg
+    - etc
+
+- name: pam-gnupg setup (/etc/pam.d/system-local.login)
+  lineinfile:
+    path: /etc/pam.d/system-local-login
+    line: "{{ item }}"
+    state: present
+  become: yes
+  loop:
+    - "auth      optional  pam_gnupg.so store-only"
+    - "session   optional  pam_gnupg.so"
+  tags:
+    - pam-gnupg
+    - etc
+
+- name: pam-gnupg setup (~/.gnupg/gpg-agent.conf)
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
+    line: "allow-preset-passhprase"
+    state: present
+    create: yes
+  tags:
+    - pam-gnupg
+    - etc
+
+- name: pam-gnupg setup (gpg-connect-agent --no-autostart reloadagent /bye)
+  command: gpg-connect-agent --no-autostart reloadagent /bye
+  changed_when: false
+  tags:
+    - pam-gnupg
+    - etc
 
