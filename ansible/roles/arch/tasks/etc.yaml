@@ -185,7 +185,7 @@
 - name: pam-gnupg setup (~/.gnupg/gpg-agent.conf)
   lineinfile:
     path: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
-    line: "allow-preset-passhprase"
+    line: "allow-preset-passphrase"
     state: present
     create: yes
   tags:
