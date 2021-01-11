@@ -14,13 +14,22 @@
     package_base: "{{ item }}"
   loop: "{{ common_aur_packages }}"
   tags:
-    - aur
+    - common-aur
     - common
 
 - name: Enable / start bluetooth daemon
   systemd:
     state: started
     name: bluetooth
+    enabled: yes
+  become: yes
+  tags:
+    - common
+
+- name: Enable / start cronie
+  systemd:
+    state: started
+    name: cronie
     enabled: yes
   become: yes
   tags:

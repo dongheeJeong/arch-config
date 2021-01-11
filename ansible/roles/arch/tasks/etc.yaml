@@ -153,4 +153,12 @@
     - mutt-wizard
     - etc
 
+- name: Install urlview from AUR
+  include_tasks: "{{ role_path }}/tasks/imports/aur.yaml"
+  vars:
+    package_base: "urlview-git"
+  tags:
+    - urlview
+    - etc
+
 

@@ -39,7 +39,8 @@ common_packages:
   - openssh
   - htop
   - python-pip
-  - gun-netcat
+  - gnu-netcat
+  - cronie
 
 common_aur_packages:
   - brave-bin
