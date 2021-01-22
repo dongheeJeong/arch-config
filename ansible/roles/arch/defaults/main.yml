@@ -96,6 +96,8 @@ etc_packages:
   - terraform
   - tmux
   - lynx # mutt
+  - zathura
+  - zathura-pdf-mupdf
 
 pip_packages:
   - awscli
